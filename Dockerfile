@@ -1,5 +1,5 @@
 # Utiliser une image Maven avec Nginx
-FROM maven:3-eclipse-temurin-21-alpine
+FROM maven:3-eclipse-temurin-24-alpine
 
 # Installer nginx
 RUN apk add --no-cache nginx \
