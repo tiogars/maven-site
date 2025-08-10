@@ -6,26 +6,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>fr.tiogars</groupId>
-  <artifactId>java-public-lib</artifactId>
-  <version>1.0.11-SNAPSHOT</version>
+  <artifactId>maven-site</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
 
-  <name>java-public-lib</name>
-  <description>Java Public Library</description>
+  <name>maven-site</name>
+  <description>Fake Maven Site to test Docker "maven-site" image</description>
   <url>https://github.com/tiogars/maven-site</url>
-  <ciManagement>
-    <system>GitHub Actions</system>
-    <url>https://github.com/tiogars/maven-site/actions</url>
-    <notifiers>
-      <notifier>
-        <type>email</type>
-        <address>tiogars@gmail.com</address>
-        <configuration>
-          <subject>Build Notification</subject>
-          <body>Build ${BUILD_STATUS}: ${BUILD_URL}</body>
-        </configuration>
-      </notifier>
-    </notifiers>
-  </ciManagement>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -37,7 +23,7 @@
     <repository>
       <id>github</id>
       <name>GitHub Packages</name>
-      <url>https://maven.pkg.github.com/tiogars/java-public-lib</url>
+      <url>https://maven.pkg.github.com/tiogars/maven-site</url>
     </repository>
   </distributionManagement>
 
@@ -72,6 +58,18 @@
         <artifactId>maven-site-plugin</artifactId>
         <version>3.21.0</version>
       </plugin>
+      <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>3.3.1</version>
+      </plugin>
+      <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.5.3</version>
+      </plugin>
     </plugins>
   </build>
 
@@ -84,6 +82,102 @@
         <artifactId>maven-project-info-reports-plugin</artifactId>
         <version>3.9.0</version>
       </plugin>
+      <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.11.2</version>
+      </plugin>
+      <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-checkstyle-plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.6.0</version>
+      </plugin>
+      <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jxr-plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>3.6.0</version>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>jxr-no-fork</report>
+              <report>test-jxr-no-fork</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+        <configuration>
+          <linkJavadoc>true</linkJavadoc>
+        </configuration>
+      </plugin>
+      <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-pmd-plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.27.0</version>
+      </plugin>
+      <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-report-plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>3.5.3</version>
+      </plugin>
     </plugins>
   </reporting>
+
+  <contributors>
+    <contributor>
+      <name>Tiogars</name>
+      <email>tiogars@gmail.com</email>
+      <organization>Tiogars</organization>
+      <organizationUrl>https://github.com/tiogars</organizationUrl>
+    </contributor>
+  </contributors>
+
+  <ciManagement>
+    <system>GitHub Actions</system>
+    <url>https://github.com/tiogars/maven-site/actions</url>
+    <notifiers>
+      <notifier>
+        <type>email</type>
+        <address>tiogars@gmail.com</address>
+        <configuration>
+          <subject>Build Notification</subject>
+          <body>Build ${BUILD_STATUS}: ${BUILD_URL}</body>
+        </configuration>
+      </notifier>
+    </notifiers>
+  </ciManagement>
+
+  <developers>
+    <developer>
+      <name>Tiogars</name>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <email>tiogars@gmail.com</email>
+      <organization>Tiogars</organization>
+      <organizationUrl>https://github.com/tiogars</organizationUrl>
+    </developer>
+  </developers>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
+    </license>
+  </licenses>
+
+  <organization>
+    <name>Tiogars</name>
+    <url>https://github.com/tiogars</url>
+  </organization>
+
+  <inceptionYear>2025</inceptionYear>
+
+  <scm>
+    <url>https://github.com/tiogars/maven-site</url>
+    <tag>main</tag>
+  </scm>
 </project>
