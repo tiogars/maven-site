@@ -1,5 +1,5 @@
 services:
   web:
-    image: ghcr.io/tiogars/maven-site:1.0.1
+    image: ghcr.io/tiogars/maven-site:latest
     ports:
       - "8080:80"
