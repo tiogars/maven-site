@@ -9,8 +9,13 @@ FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
 ARG VERSION=latest
 LABEL version="${VERSION}"
+LABEL org.opencontainers.image.title="Maven Site"
 LABEL org.opencontainers.image.description="HTTP server for Maven site"
+LABEL org.opencontainers.image.version="${VERSION}"
+LABEL org.opencontainers.image.vendor=tiogars
 LABEL org.opencontainers.image.source=https://github.com/tiogars/maven-site
+LABEL org.opencontainers.image.url=https://github.com/tiogars/maven-site
+LABEL org.opencontainers.image.documentation=https://github.com/tiogars/maven-site
 LABEL org.opencontainers.image.licenses=MIT
 COPY --from=builder /app/target/site ./
 EXPOSE 80
