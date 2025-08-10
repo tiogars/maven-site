@@ -52,7 +52,7 @@ jobs:
 
       - name: Change Docker version
         run: |
-          docker tag ghcr.io/${{ github.repository }}:latest ghcr.io/${{ github.repository }}:${{ github.event.inputs.new_version }}
+          docker tag ghcr.io/${{ github.repository }}:${{ github.event.inputs.new_version }} ghcr.io/${{ github.repository }}:latest
           docker push ghcr.io/${{ github.repository }}:${{ github.event.inputs.new_version }}
 
       - name: Create GitHub Release
