@@ -14,10 +14,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Check for Dockerfile
+      - name: Check if Dockerfile exists
         run: |
-          if [ ! -f dockerfile ]; then
-            echo "dockerfile not found!"
+          if [ ! -f Dockerfile ]; then
+            echo "Dockerfile not found in repository root!"
             exit 1
           fi
 
