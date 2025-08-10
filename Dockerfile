@@ -13,6 +13,7 @@ RUN chmod +x /entrypoint.sh
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Labels for the image
+ARG VERSION="latest"
 LABEL version="${VERSION}"
 LABEL org.opencontainers.image.title="Maven Site"
 LABEL org.opencontainers.image.description="HTTP server for Maven site"
