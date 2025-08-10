@@ -1,3 +1,6 @@
-# java-public-lib
+# tiogars/maven-site
 
-Template to create a java libary to publish in github registry
+Docker image to render the maven site of a project with maven.
+
+- pom.xml : template to set maven site
+- docker-compose.yml : template to set [traefik](https://doc.traefik.io/traefik/)

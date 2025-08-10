@@ -1,0 +1,8 @@
+services:
+  maven-site:
+    build: .
+    ports:
+      - "8080:80"
+    # Optionnel : pour reconstruire à chaque changement
+    volumes:
+      - .:/app
